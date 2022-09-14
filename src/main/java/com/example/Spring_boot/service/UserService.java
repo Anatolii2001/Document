@@ -12,3 +12,4 @@ public interface UserService {
     void delete(int id);
 //    User isExistById(User user);
 }
+
