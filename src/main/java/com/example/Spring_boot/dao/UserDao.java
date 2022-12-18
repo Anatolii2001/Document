@@ -1,6 +1,7 @@
 package com.example.Spring_boot.dao;
 
 import com.example.Spring_boot.model.User;
+
 import java.util.List;
 
 public interface UserDao {
@@ -11,4 +12,3 @@ public interface UserDao {
     void delete(int id);
 //    User isExistById(User user);
 }
-

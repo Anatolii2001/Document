@@ -1,10 +1,10 @@
 package com.example.Spring_boot.service;
 
 import com.example.Spring_boot.model.User;
+
 import java.util.List;
 
 public interface UserService {
-
     List<User> getAllUsers();
     void save(User user);
     User findById(int id);
@@ -12,4 +12,3 @@ public interface UserService {
     void delete(int id);
 //    User isExistById(User user);
 }
-

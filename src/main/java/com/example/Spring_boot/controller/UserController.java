@@ -60,10 +60,9 @@ public class UserController {
         return "redirect:/users";
     }
 
-//    @PostMapping(value = "{/delete")
-//    public String isExistById(@PathVariable User user) {
-//        userService.delete(user.getId());
-//        return "redirect:/users";
-//    }
+    @PostMapping(value = "/delete")
+    public String isExistById(@PathVariable User user) {
+        userService.delete(user.getId());
+        return "redirect:/users";
+    }
 }
-

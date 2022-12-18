@@ -5,31 +5,68 @@
     <title>Users</title>
     <link rel="stylesheet" type="text/css"
           th:href="@{/css/style.css}"/>
+    <style>
+        tbody {
+            font-size: 90%;
+            font-style: italic;
+        }
 
+        tfoot {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-<h1>Users</h1>
+<h1>Passenger</h1>
 <div>
     <table border="1">
+        <caption><b>Passport Users</b></caption>
         <tr>
             <th>Id</th>
-            <th>Email</th>
-            <th>Name</th>
-            <th>Lastname</th>
+            <th>Type</th>
+            <th>CodeOfIssuingState</th>
+            <th>PassportNo</th>
+            <th>Surname</th>
+            <th>GivenNames</th>
+            <th>Nationality</th>
+            <th>PersonalNo</th>
+            <th>DateOfBirth</th>
+            <th>PlaceOfBirth</th>
+            <th>Sex</th>
+            <th>DateOfIssue</th>
+            <th>DateOfExpiry</th>
+            <th>Authority</th>
         </tr>
         <tr th:each="user:${users}">
             <td th:utext="${user.getId()}"></td>
-            <td th:utext="${user.getEmail()}"></td>
-            <td th:utext="${user.getName()}"></td>
-            <td th:utext="${user.getLastName()}"></td>
-            <td><a th:href="@{/{id}/edit(id=${user.getId()})}">Edit</a></td>
+            <td th:utext="${user.getType()}"></td>
+            <td th:utext="${user.getCodeOfIssuingState()}"></td>
+            <td th:utext="${user.getPassportNo()}"></td>
+            <td th:utext="${user.getSurname()}"></td>
+            <td th:utext="${user.getGivenNames()}"></td>
+            <td th:utext="${user.getNationality()}"></td>
+            <td th:utext="${user.getPersonalNo()}"></td>
+            <td th:utext="${user.getDateOfBirth()}"></td>
+            <td th:utext="${user.getPlaceOfBirth()}"></td>
+            <td th:utext="${user.getSex()}"></td>
+            <td th:utext="${user.getDateOfIssue()}"></td>
+            <td th:utext="${user.getDateOfExpiry()}"></td>
+            <td th:utext="${user.getAuthority()}"></td>
+
+            <td><a th:href="@{/{id}/edit(id=${user.getId()})}">
+                <input type="submit" value="Edit">
+            </a></td>
+
             <td><form th:method="DELETE" th:action="@{/{id}/delete(id=${user.getId()})}">
                 <input type="submit" value="Delete">
             </form></td>
+
         </tr>
     </table>
     <br/>
-    <a href="/new">Create new user</a>
+    <a href="/new">
+        <input type="submit" value="Create new user">
+    </a>
 </div>
 </body>
 </html>

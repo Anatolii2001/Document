@@ -10,4 +10,3 @@ class SpringbootApplicationTests {
     void contextLoads() {
     }
 }
-

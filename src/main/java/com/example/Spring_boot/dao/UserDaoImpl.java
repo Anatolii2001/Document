@@ -41,9 +41,19 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void update(int id, User updateUser) {
         User user = findById(id);
-        user.setEmail(updateUser.getEmail());
-        user.setName(updateUser.getName());
-        user.setLastName(updateUser.getLastName());
+        user.setType(updateUser.getType());
+        user.setCodeOfIssuingState(updateUser.getCodeOfIssuingState());
+        user.setPassportNo(updateUser.getPassportNo());
+        user.setSurname(updateUser.getSurname());
+        user.setGivenNames(updateUser.getGivenNames());
+        user.setNationality(updateUser.getNationality());
+        user.setPersonalNo(updateUser.getPersonalNo());
+        user.setDateOfBirth(updateUser.getDateOfBirth());
+        user.setPlaceOfBirth(updateUser.getPlaceOfBirth());
+        user.setSex(updateUser.getSex());
+        user.setDateOfIssue(updateUser.getDateOfIssue());
+        user.setDateOfExpiry(updateUser.getDateOfExpiry());
+        user.setAuthority(updateUser.getAuthority());
         entityManager.merge(user);
     }
 
@@ -63,4 +73,3 @@ public class UserDaoImpl implements UserDao {
 //        return user;
 //    }
 }
-
