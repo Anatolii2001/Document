@@ -19,25 +19,25 @@ public class PassportServiceImpl implements PassportService {
     }
 
     @Override
-    public List<Passport> getAllUsers() {
+    public List<Passport> getAllPassports() {
         return passportRepository.findAll();
     }
 
     @Override
     @Transactional
-    public void save(Passport user) {
-        passportRepository.save(user);
+    public void save(Passport passport) {
+        passportRepository.save(passport);
     }
 
     @Override
     public Passport findById(long id) {
-        return passportRepository.findUserById(id);
+        return passportRepository.findPassportById(id);
     }
 
     @Override
     @Transactional
-    public void update(long id, Passport updateUser) {
-        passportRepository.save(updateUser);
+    public void update(long id, Passport updatePassport) {
+        passportRepository.save(updatePassport);
     }
 
     @Override
@@ -48,7 +48,7 @@ public class PassportServiceImpl implements PassportService {
 
     @Override
     @Transactional
-    public Passport isExistById(Passport user) {
-        return passportRepository.findUserById(user.getId());
+    public Passport isExistById(Passport passport) {
+        return passportRepository.findPassportById(passport.getId());
     }
 }

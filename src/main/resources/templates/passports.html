@@ -37,27 +37,27 @@
             <th>DateOfExpiry</th>
             <th>Authority</th>
         </tr>
-        <tr th:each="user:${users}">
-            <td th:utext="${user.getId()}"></td>
-            <td th:utext="${user.getType()}"></td>
-            <td th:utext="${user.getCodeOfIssuingState()}"></td>
-            <td th:utext="${user.getPassportNo()}"></td>
-            <td th:utext="${user.getSurname()}"></td>
-            <td th:utext="${user.getGivenNames()}"></td>
-            <td th:utext="${user.getNationality()}"></td>
-            <td th:utext="${user.getPersonalNo()}"></td>
-            <td th:utext="${user.getDateOfBirth()}"></td>
-            <td th:utext="${user.getPlaceOfBirth()}"></td>
-            <td th:utext="${user.getSex()}"></td>
-            <td th:utext="${user.getDateOfIssue()}"></td>
-            <td th:utext="${user.getDateOfExpiry()}"></td>
-            <td th:utext="${user.getAuthority()}"></td>
+        <tr th:each="passport:${passports}">
+            <td th:utext="${passport.getId()}"></td>
+            <td th:utext="${passport.getType()}"></td>
+            <td th:utext="${passport.getCodeOfIssuingState()}"></td>
+            <td th:utext="${passport.getPassportNo()}"></td>
+            <td th:utext="${passport.getSurname()}"></td>
+            <td th:utext="${passport.getGivenNames()}"></td>
+            <td th:utext="${passport.getNationality()}"></td>
+            <td th:utext="${passport.getPersonalNo()}"></td>
+            <td th:utext="${passport.getDateOfBirth()}"></td>
+            <td th:utext="${passport.getPlaceOfBirth()}"></td>
+            <td th:utext="${passport.getSex()}"></td>
+            <td th:utext="${passport.getDateOfIssue()}"></td>
+            <td th:utext="${passport.getDateOfExpiry()}"></td>
+            <td th:utext="${passport.getAuthority()}"></td>
 
-            <td><a th:href="@{/{id}/edit(id=${user.getId()})}">
+            <td><a th:href="@{/{id}/edit(id=${passport.getId()})}">
                 <input type="submit" value="Edit">
             </a></td>
 
-            <td><form th:method="DELETE" th:action="@{/{id}/delete(id=${user.getId()})}">
+            <td><form th:method="DELETE" th:action="@{/{id}/delete(id=${passport.getId()})}">
                 <input type="submit" value="Delete">
             </form></td>
 

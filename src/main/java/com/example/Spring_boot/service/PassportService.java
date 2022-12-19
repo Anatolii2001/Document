@@ -1,11 +1,12 @@
 package com.example.Spring_boot.service;
 
 import com.example.Spring_boot.entities.Passport;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
 public interface PassportService {
-    List<Passport> getAllUsers();
+    List<Passport> getAllPassports();
     void save(Passport passport);
     Passport findById(long id);
     void update(long id, Passport updatePassport);
