@@ -45,9 +45,9 @@ public class UserServiceImpl implements UserService {
         userDao.delete(id);
     }
 
-//    @Override
-//    @Transactional
-//    public User isExistById(User user) {
-//        return userDao.isExistById(user);
-//    }
+    @Override
+    @Transactional
+    public User isExistById(User user) {
+        return userDao.isExistById(user);
+    }
 }

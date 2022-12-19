@@ -10,5 +10,5 @@ public interface UserDao {
     User findById(int id);
     void update(int id, User updateUser);
     void delete(int id);
-//    User isExistById(User user);
+    User isExistById(User user);
 }

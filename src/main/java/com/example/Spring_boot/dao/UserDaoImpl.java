@@ -63,13 +63,13 @@ public class UserDaoImpl implements UserDao {
         entityManager.remove(user);
     }
 
-//    @Override
-//    public User isExistById(User user) {
-//        if(entityManager.contains(user)) {
-//            entityManager.remove(user);
-//        } else {
-//            entityManager.remove(entityManager.merge(user));
-//        }
-//        return user;
-//    }
+    @Override
+    public User isExistById(User user) {
+        if(entityManager.contains(user)) {
+            entityManager.remove(user);
+        } else {
+            entityManager.remove(entityManager.merge(user));
+        }
+        return user;
+    }
 }
