@@ -8,8 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-//@Component
-//@Transactional(readOnly = true)
 public class PassportServiceImpl implements PassportService {
 
     private final PassportRepository passportRepository;

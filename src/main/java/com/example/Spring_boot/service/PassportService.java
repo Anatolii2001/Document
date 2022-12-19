@@ -1,7 +1,6 @@
 package com.example.Spring_boot.service;
 
 import com.example.Spring_boot.entities.Passport;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 

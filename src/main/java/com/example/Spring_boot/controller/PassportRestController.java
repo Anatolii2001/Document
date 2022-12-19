@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 //@RestController
-//@RequestMapping("/api/users")
+//@RequestMapping("/api/passports")
 public class PassportRestController {
 
     private final PassportService passportService;
