@@ -12,8 +12,8 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "PassportUsers")
+public class Passport {
 
     @Id
     @Column(name = "id")

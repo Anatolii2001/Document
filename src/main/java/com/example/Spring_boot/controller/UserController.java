@@ -1,7 +1,7 @@
 package com.example.Spring_boot.controller;
 
-import com.example.Spring_boot.entities.User;
-import com.example.Spring_boot.service.UserService;
+import com.example.Spring_boot.entities.Passport;
+import com.example.Spring_boot.service.PassportService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.*;
 //@RequestMapping("/api/users")
 public class UserController {
 
-    private final UserService userService;
+    private final PassportService userService;
 
-    public UserController(UserService userService) {
+    public UserController(PassportService userService) {
         this.userService = userService;
     }
 
@@ -31,12 +31,12 @@ public class UserController {
 
     @GetMapping(value = "/new")
     public String newUser(ModelMap model) {
-        model.addAttribute("user", new User());
+        model.addAttribute("user", new Passport());
         return "new";
     }
 
     @PostMapping(value = "/users")
-    public String saveNewUser(@ModelAttribute("user") User user) {
+    public String saveNewUser(@ModelAttribute("user") Passport user) {
         userService.save(user);
         return "redirect:/users";
     }
@@ -48,7 +48,7 @@ public class UserController {
     }
 
     @PostMapping(value = "/users/{id}")
-    public String update(@ModelAttribute("user") User user, @PathVariable("id") long id) {
+    public String update(@ModelAttribute("user") Passport user, @PathVariable("id") long id) {
         userService.update(id, user);
         return "redirect:/users";
     }
@@ -60,7 +60,7 @@ public class UserController {
     }
 
     @PostMapping(value = "/delete")
-    public String isExistById(@PathVariable User user) {
+    public String isExistById(@PathVariable Passport user) {
         userService.delete(user.getId());
         return "redirect:/users";
     }
