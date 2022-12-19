@@ -1,53 +1,54 @@
 package com.example.Spring_boot.service;
 
-import com.example.Spring_boot.model.User;
-import com.example.Spring_boot.dao.UserDao;
-import org.springframework.stereotype.Component;
+import com.example.Spring_boot.entities.User;
+import com.example.Spring_boot.repositories.UserRepository;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Component
-@Transactional(readOnly = true)
+@Service
+//@Component
+//@Transactional(readOnly = true)
 public class UserServiceImpl implements UserService {
 
-    private final UserDao userDao;
+    private final UserRepository userRepository;
 
-    public UserServiceImpl(UserDao userDao) {
-        this.userDao = userDao;
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @Override
     public List<User> getAllUsers() {
-        return userDao.getAllUsers();
+        return userRepository.findAll();
     }
 
     @Override
     @Transactional
     public void save(User user) {
-        userDao.save(user);
+        userRepository.save(user);
     }
 
     @Override
-    public User findById(int id) {
-        return userDao.findById(id);
-    }
-
-    @Override
-    @Transactional
-    public void update(int id, User updateUser) {
-        userDao.update(id, updateUser);
+    public User findById(long id) {
+        return userRepository.findUserById(id);
     }
 
     @Override
     @Transactional
-    public void delete(int id) {
-        userDao.delete(id);
+    public void update(long id, User updateUser) {
+        userRepository.save(updateUser);
+    }
+
+    @Override
+    @Transactional
+    public void delete(long id) {
+        userRepository.deleteById(id);
     }
 
     @Override
     @Transactional
     public User isExistById(User user) {
-        return userDao.isExistById(user);
+        return userRepository.findUserById(user.getId());
     }
 }

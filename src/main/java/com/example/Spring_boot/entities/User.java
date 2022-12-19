@@ -1,4 +1,4 @@
-package com.example.Spring_boot.model;
+package com.example.Spring_boot.entities;
 
 import lombok.*;
 
@@ -18,7 +18,7 @@ public class User {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     @NonNull
     @Column (name = "type")

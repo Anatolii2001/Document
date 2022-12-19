@@ -1,15 +1,14 @@
 package com.example.Spring_boot.controller;
 
-import com.example.Spring_boot.model.User;
+import com.example.Spring_boot.entities.User;
 import com.example.Spring_boot.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
+//@RestController
+//@RequestMapping("/api/users")
 public class UserController {
 
     private final UserService userService;
@@ -43,19 +42,19 @@ public class UserController {
     }
 
     @GetMapping(value = "/{id}/edit")
-    public String edit(ModelMap model, @PathVariable("id") int id) {
+    public String edit(ModelMap model, @PathVariable("id") long id) {
         model.addAttribute("user", userService.findById(id));
         return "edit";
     }
 
     @PostMapping(value = "/users/{id}")
-    public String update(@ModelAttribute("user") User user, @PathVariable("id") int id) {
+    public String update(@ModelAttribute("user") User user, @PathVariable("id") long id) {
         userService.update(id, user);
         return "redirect:/users";
     }
 
     @PostMapping(value = "/{id}/delete")
-    public String delete(@PathVariable("id") int id) {
+    public String delete(@PathVariable("id") long id) {
         userService.delete(id);
         return "redirect:/users";
     }
